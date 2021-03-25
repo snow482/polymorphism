@@ -1,6 +1,11 @@
 #pragma once
+#include "Figure.hpp"
 
+class Triangle : public Figure {
 
-class Triangle {
+    ~Triangle() = default;
+    float Perimeter(int a, int b, int c) {
+        
+    }
 
 };

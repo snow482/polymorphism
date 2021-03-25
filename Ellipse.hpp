@@ -1,7 +1,8 @@
 #pragma once
+#include "Figure.hpp"
 
+class Ellipse : public Figure {
 
-class Ellipse {
-
+    ~Ellipse() = default;
 };
 

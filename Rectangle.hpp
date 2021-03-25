@@ -1,6 +1,7 @@
 #pragma once
+#include "Figure.hpp"
 
+class Rectangle : public Figure{
 
-class Rectangle {
-
+    ~Rectangle() = default;
 };

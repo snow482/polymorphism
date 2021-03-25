@@ -3,10 +3,7 @@
 #include <fstream>
 #include <iomanip>
 #include <algorithm>
-#include "Triangle.hpp"
-#include "Rectangle.hpp"
-#include "Circle.hpp"
-#include "Ellipse.hpp"
+
 
 // Figure - базовый класс, другие фигуры будут наследоваться от него
 // есть S - площадь, P - периметр
@@ -16,17 +13,25 @@
 
 class Figure {
 public:
-    Figure();
-    void Perimeter(uint32_t a) {
 
-    }
-
+    virtual ~Figure() = default;
+    virtual float Perimeter() const = 0;
+    virtual float Square() const = 0;
 
 private:
-    int a, b, c, d = 0;
-    uint32_t m_perimeter = 0;
-    uint32_t m_square = 0;
+    float getPerimeter(float perimeter);
+    float sumOfPerimeters(float trianglePerimeter,
+                          float rectanglePerimeter,
+                          float circlePerimeter,
+                          float ellipsePerimeter);
+    float sumOfSquares(float triangleSquare,
+                       float rectangleSquare,
+                       float circleSquare,
+                       float ellipseSquare);
 
+private:
+    float m_perimeterSum = 0;
+    float m_squareSum = 0;
 };
 
 
