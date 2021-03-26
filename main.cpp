@@ -1,4 +1,5 @@
-#include <Figure.hpp>
+#include "inc/Figure.hpp"
+
 
 int main() {
 

@@ -3,16 +3,16 @@ project(polymorphism)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(
+add_executable( polymorphism
         main.cpp
-        Figure.hpp
-        Figure.cpp
-        Triangle.hpp
-        Triangle.cpp
-        Rectangle.hpp
-        Rectangle.cpp
-        Circle.hpp
-        Circle.cpp
-        Ellipse.hpp
-        Ellipse.cpp)
+        inc/Figure.hpp
+        src/Figure.cpp
+        inc/Triangle.hpp
+        src/Triangle.cpp
+        inc/Rectangle.hpp
+        src/Rectangle.cpp
+        inc/Circle.hpp
+        src/Circle.cpp
+        inc/Ellipse.hpp
+        src/Ellipse.cpp)
 

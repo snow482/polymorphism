@@ -3,6 +3,7 @@
 #include <fstream>
 #include <iomanip>
 #include <algorithm>
+#include <vector>
 
 
 // Figure - базовый класс, другие фигуры будут наследоваться от него
@@ -11,27 +12,28 @@
 // нужновывести сумму всех площадей и периметров всех фигур
 
 
+/// написать функцию рассчета стороны (по 2 точкам)
+
+
+
+float sumOfPerimeters(float trianglePerimeter,
+                      float rectanglePerimeter,
+                      float circlePerimeter,
+                      float ellipsePerimeter);
+float sumOfSquares(float triangleSquare,
+                   float rectangleSquare,
+                   float circleSquare,
+                   float ellipseSquare);
+
+
 class Figure {
 public:
 
     virtual ~Figure() = default;
-    virtual float Perimeter() const = 0;
-    virtual float Square() const = 0;
+    virtual void Perimeter() const = 0;
+    virtual void Square() const = 0;
 
-private:
-    float getPerimeter(float perimeter);
-    float sumOfPerimeters(float trianglePerimeter,
-                          float rectanglePerimeter,
-                          float circlePerimeter,
-                          float ellipsePerimeter);
-    float sumOfSquares(float triangleSquare,
-                       float rectangleSquare,
-                       float circleSquare,
-                       float ellipseSquare);
 
-private:
-    float m_perimeterSum = 0;
-    float m_squareSum = 0;
 };
 
 
