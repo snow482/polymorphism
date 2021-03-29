@@ -3,30 +3,18 @@
 
 
 
-
 class Triangle : public Figure {
 public:
-    Triangle(int x1, int y1, int x2, int y2, int x3, int y3);
+    Triangle(Point p1, Point p2, Point p3);
     ~Triangle() = default;
 
-    float Perimeter() const override {
-
-    };
-    float Square() const override {
-
-    };
+    float Perimeter() const override;
+    float Square() const override;
 
 private:
-    int findCoordinate(std::vector<int>& coordinateVec) {
-        for (int i = 0; i < coordinateVec.size(); ++i) {
-
-        }
-    }
-
-private:
-    std::vector<std::pair<int, int>> coordinate;
-
-
+  Point m_p1;
+  Point m_p2;
+  Point m_p3;
 };
 
 

@@ -16,7 +16,14 @@
 /// написать функцию рассчета стороны (по 2 точкам)
 
 
+struct Point {
+    float x, y;
+};
+/// вычитание из одной координаты, другой и возвращение значения в виде pair
+std::vector<std::pair<float, float>> coordinatesSubstraction(std::vector<std::pair<int, int>> coordinatesVec);
 
+/// расчет сторон по теореме Пифагора и запись значений в вектор
+std::vector<float> PithagorasFunction (std::vector<std::pair<float, float>> vec);
 
 
 class Figure {
@@ -26,7 +33,7 @@ public:
     virtual float Perimeter() const = 0;
     virtual float Square() const = 0;
 
-    float sumOf
+    float sumOfPerimeters();
 
 };
 
