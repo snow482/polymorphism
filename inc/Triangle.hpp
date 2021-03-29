@@ -9,8 +9,12 @@ public:
     Triangle(int x1, int y1, int x2, int y2, int x3, int y3);
     ~Triangle() = default;
 
-    void Perimeter() const override;
-    void Square() const override;
+    float Perimeter() const override {
+
+    };
+    float Square() const override {
+
+    };
 
 private:
     int findCoordinate(std::vector<int>& coordinateVec) {

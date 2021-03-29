@@ -4,6 +4,7 @@
 #include <iomanip>
 #include <algorithm>
 #include <vector>
+#include <string>
 
 
 // Figure - базовый класс, другие фигуры будут наследоваться от него
@@ -16,23 +17,16 @@
 
 
 
-float sumOfPerimeters(float trianglePerimeter,
-                      float rectanglePerimeter,
-                      float circlePerimeter,
-                      float ellipsePerimeter);
-float sumOfSquares(float triangleSquare,
-                   float rectangleSquare,
-                   float circleSquare,
-                   float ellipseSquare);
 
 
 class Figure {
 public:
 
     virtual ~Figure() = default;
-    virtual void Perimeter() const = 0;
-    virtual void Square() const = 0;
+    virtual float Perimeter() const = 0;
+    virtual float Square() const = 0;
 
+    float sumOf
 
 };
 
