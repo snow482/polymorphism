@@ -1,6 +1,7 @@
 #include "inc/Figure.hpp"
 #include <fstream>
-#include <cmath>
+
+
 
 /*!
  * точка {x, y}
@@ -12,13 +13,28 @@
 /// чтение файла и запись значений из файла в vector<pair<float, float>>
 std::vector<std::pair<float, float>> fileReading(const std::string& filePath) {
     std::ifstream input {filePath};
+    int n = 0;
     char ch;
+    input >> n;
     std::vector<float> vecForReading;
     std::vector<std::pair<float, float>> vec;
     if(input.bad()) {
         std::cout << "fail is broken";
     }
     else {
+        switch(n) {
+            case 1:
+                for (int i = 0; i <= 6; ++i) {
+                    input >> vecForReading[i];
+                }
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+        }
         while (input.get(ch)) {
             vecForReading.push_back(ch);
         }
@@ -32,6 +48,9 @@ std::vector<std::pair<float, float>> fileReading(const std::string& filePath) {
 int main() {
     /// положили все в векторПар, чтобы далее с ним работать 
     std::vector<std::pair<float, float>> pairsOfNumbers = fileReading("numbers.txt");
+
+    /// 3 раза вызвать функцию coordinatesSubstraction
+
 
 
     return 0;

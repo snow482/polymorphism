@@ -7,8 +7,12 @@ Triangle::Triangle(Point t1, Point t2, Point t3)
 {}
 
 float Triangle::Perimeter() const {
-    float perimeterValue = 0;
-    perimeterValue = coordinatesSubstraction(m_p1, m_p2, m_p3);
+    std::vector<std::pair<float, float>> perimeterValue;
+
+    for (int i = 0; i < ; ++i) {
+
+    }
+    perimeterValue = coordinatesSubstraction(m_p1, m_p2);
     return perimeterValue;
 }
 float Triangle::Square() const {
