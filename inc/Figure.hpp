@@ -21,7 +21,7 @@ struct Point {
     float x, y;
 };
 /// вычитание из одной координаты, другой и возвращение значения в виде pair
-std::vector<std::pair<float, float>> coordinatesSubstraction(std::vector<float>(Point) vec);
+std::vector<std::pair<float, float>> coordinatesSubstraction(std::vector<Point*> vec);
 
 
 /// расчет сторон по теореме Пифагора и запись значений в вектор

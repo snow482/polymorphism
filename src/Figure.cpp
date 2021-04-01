@@ -1,6 +1,6 @@
 #include "../inc/Figure.hpp"
 
-std::vector<std::pair<float, float>> coordinatesSubstraction(std::vector<float>(Point) vec) {
+std::vector<std::pair<float, float>> coordinatesSubstraction(std::vector<Point*> vec) {
     std::vector<std::pair<float, float>> vec;
     vec.emplace_back(std::make_pair(p1.x-p2.x, p1.y - p2.y));
     return vec;
