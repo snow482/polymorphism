@@ -1,5 +1,82 @@
-#include "inc/Figure.hpp"
+#include <iostream>
+#include <iomanip>
+#include <algorithm>
+#include <vector>
+#include <string>
+#include <cmath>
 #include <fstream>
+
+
+struct Point {
+    int x, y = 0;
+};
+
+/// Колличество фигур
+///     открыть файл
+std::vector<float> fileReading(const std::string& filePath) {
+std::ifstream input {filePath};
+int n = 0;
+char ch;
+input >> n;
+
+///        прочитать файл
+if(input.bad()){
+    std::cout << "Error" << std::endl;
+}
+else {
+    switch (n) {
+        case 1:
+            Point p[3];
+            input >> p[0].x >> p[0].y >> p[1].x >> p[1].y >> p[2].x >> p[2].y;
+            break;
+        /*case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;*/
+    }
+}
+
+}
+
+
+///
+/// SumP = 0; SumS = 0;
+/// for(int i = 0; i < кол-во
+///    Читаем фигуру
+///    P, S - вычислить
+///    SumP += P
+///    SumS += S
+/// вывод SumP,SumS
+
+/*!
+ * Прочитать фигуру
+ *     прочитать тип фигуры - t
+ *     if (t == triangle)
+ *         Прочитать 3 точки (а, b, c)
+ *         Создать triangle из a, b, c (new triangle(a,b,c))
+ *         Вернуть triangle
+ *     if  (t == rectangle)
+ *         ... (как в triangle)
+ *
+ */
+
+/*!
+ * Figure
+ *     P
+ *     S
+ *     print() // debug
+ *
+ * triangle : Figure
+ *     Constructor triangle (a,b,c)
+ *     P() { }
+ *     S() { }
+ *     print()
+ *
+ * private:
+ * a,b,c
+ */
 
 
 
@@ -54,30 +131,8 @@ int main() {
     /// 3 раза вызвать функцию coordinatesSubstraction
 
 
-
     return 0;
 }
-
-
-/*!
- *
- * 1.       Создание базового класса Figure
- * 1.1      Функция вычисления длины стороны Func()
- * 1.2      Добавление виртуальных методов Perimeter(), Square()
- *
- * 2.       Создание наследника, класс Triangle (остальные аналогично)
- * 2.1      Переопределение методов из Figure
- * 2.2      Нахождение длин сторон треугольника, посредством Func()
- *
- *
- * 3.       Считывание из файла и сохранение значений точек в вектор
- * 3.1      Создание объекта
- *
- *
- * */
-
-
-
 
 
 
