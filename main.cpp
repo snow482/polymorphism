@@ -20,14 +20,15 @@ char ch;
 input >> n;
 
 ///        прочитать файл
-if(input.bad()){
+if(input.bad()) {
     std::cout << "Error" << std::endl;
 }
 else {
-    switch (n) {
+    switch (n)
+    {
         case 1:
-            Point p[3];
-            input >> p[0].x >> p[0].y >> p[1].x >> p[1].y >> p[2].x >> p[2].y;
+            Point t[3];
+            input >> t[0].x >> t[0].y >> t[1].x >> t[1].y >> t[2].x >> t[2].y;
             break;
         /*case 2:
             break;
@@ -36,9 +37,11 @@ else {
         case 4:
             break;*/
     }
+    }
 }
 
-}
+
+
 
 
 ///
@@ -61,6 +64,25 @@ else {
  *         ... (как в triangle)
  *
  */
+
+class Figure {
+public:
+    
+
+private:
+
+
+};
+
+class Triangle : Figure {
+public:
+
+
+private:
+
+
+};
+
 
 /*!
  * Figure
@@ -88,7 +110,7 @@ else {
  */
 
 /// чтение файла и запись значений из файла в vector<pair<float, float>>
-std::vector<std::pair<float, float>> fileReading(const std::string& filePath) {
+/*std::vector<std::pair<float, float>> fileReading(const std::string& filePath) {
     std::ifstream input {filePath};
     int n = 0;
     char ch;
@@ -122,11 +144,11 @@ std::vector<std::pair<float, float>> fileReading(const std::string& filePath) {
         }
         return vec;
     }
-}
+}*/
 
 int main() {
     /// положили все в векторПар, чтобы далее с ним работать 
-    std::vector<std::pair<float, float>> pairsOfNumbers = fileReading("numbers.txt");
+    /*std::vector<std::pair<float, float>> pairsOfNumbers = fileReading("numbers.txt");*/
 
     /// 3 раза вызвать функцию coordinatesSubstraction
 
