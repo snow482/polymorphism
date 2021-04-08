@@ -14,21 +14,21 @@ struct Point {
 /// Колличество фигур
 ///     открыть файл
 std::vector<float> fileReading(const std::string& filePath) {
-std::ifstream input {filePath};
-int n = 0;
-char ch;
-input >> n;
+    std::ifstream input {filePath};
+    int n = 0;
+    char ch;
+    input >> n;
 
-///        прочитать файл
-if(input.bad()) {
-    std::cout << "Error" << std::endl;
-}
-else {
-    switch (n)
-    {
-        case 1:
-            Point t[3];
-            input >> t[0].x >> t[0].y >> t[1].x >> t[1].y >> t[2].x >> t[2].y;
+    ///        прочитать файл
+    if(input.bad()) {
+        std::cout << "Error" << std::endl;
+    }
+    else {
+        switch (n)
+        {
+            case 1:
+                Point t[3];
+                input >> t[0].x >> t[0].y >> t[1].x >> t[1].y >> t[2].x >> t[2].y;
             break;
         /*case 2:
             break;
@@ -67,20 +67,28 @@ else {
 
 class Figure {
 public:
-    
-
-private:
-
-
+   virtual float Perimeter() const = 0;
+   virtual float Square() const = 0;
 };
 
 class Triangle : Figure {
 public:
+    Triangle(Point a, Point b, Point c)
+            : m_a(a), m_b(b), m_c(c)
+    {}
+    ~Triangle() = default;
 
+    float Perimeter() const override {
+
+    }
+    float Square() const override {
+        
+    }
 
 private:
-
-
+    Point m_a;
+    Point m_b;
+    Point m_c;
 };
 
 
