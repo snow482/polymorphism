@@ -77,7 +77,6 @@ public:
     Rectangle(Point a, Point b, Point c, Point d)
     : m_a(a), m_b(b), m_c(c), m_d(d)
     {}
-
     ~Rectangle()= default;
     float Perimeter() const override {
         float ab = gipotenuza(m_a, m_b);
@@ -90,8 +89,6 @@ public:
         else{
             return 2*ab + 2*bc;
         }
-
-
     };
     float Square() const override {
         float ab = gipotenuza(m_a, m_b);
@@ -105,9 +102,55 @@ private:
     Point m_b;
     Point m_c;
     Point m_d;
-
 };
 
+class Circle : public Figure {
+public:
+    Circle(Point a, Point b)
+    : m_a(a), m_b(b)
+    {}
+    ~Circle() = default;
+    float Perimeter() const override {
+        float ab = gipotenuza(m_a, m_b);
+        float perimeter = ab * 2 * 3.14;
+        return perimeter;
+    }
+    float Square() const override {
+        float ab = gipotenuza(m_a, m_b);
+        float square = 3.14f * ab;
+        return square;
+    }
+
+private:
+    Point m_a;
+    Point m_b;
+};
+
+class Ellipse : public Figure {
+public:
+    Ellipse(Point a, Point b, Point c)
+    : m_a(a), m_b(b), m_c(c)
+    {}
+    ~Ellipse() = default;
+    float Perimeter() const override {
+        float ab = gipotenuza(m_a, m_b);
+        float ac = gipotenuza(m_a, m_c);
+        float perimeter = (4 * (3.14f * ab * ac + (ab - ac))) / ab+ac;
+        return perimeter;
+        /// P = (4 * (pi*a*b + (a-b))) / a+b
+    }
+    float Square() const override {
+        float ab = gipotenuza(m_a, m_b);
+        float ac = gipotenuza(m_a, m_c);
+        float square = 3.14f * ab * ac;
+        return square;
+    }
+
+private:
+    Point m_a;
+    Point m_b;
+    Point m_c;
+};
 
 /// Колличество фигур
 ///     открыть файл
@@ -125,7 +168,7 @@ std::vector<Figure*> fileReading(const std::string& filePath) {
         }
         else {
             int n;
-            input >> n >> std::ws;
+            input >> n /*>> std::ws*/;
             switch (n)
             {
                 case 1:
@@ -145,10 +188,21 @@ std::vector<Figure*> fileReading(const std::string& filePath) {
                     figure.push_back(ptr);
                 }
                 break;
-                /*case 3:
+                case 3:
+                {
+                    Point c[2];
+                    input >> c[0].x >> c[0].y >> c[1].x >> c[1].y;
+                    auto ptr = new Circle (c[0], c[1]);
+                    figure.push_back(ptr);
+                }
                 break;
                 case 4:
-                break;*/
+                {
+                    Point e[3];
+                    input >> e[0].x >> e[0].y >> e[1].x >> e[1].y >> e[2].x >> e[2].y;
+                    auto ptr = new Ellipse(e[0], e[1], e[2]);
+                }
+                break;
                 default:
                     std::cout << "something wrong" << std::endl;
             }
@@ -157,8 +211,7 @@ std::vector<Figure*> fileReading(const std::string& filePath) {
     return figure;
 }
 
-
-std::vector<float> sumOfAll ( std::vector<Figure*> figures) {
+std::vector<float> sumOfAll ( std::vector<Figure*>& figures) {
     float Psum = 0;
     float Ssum = 0;
     std::vector<float> sum;
