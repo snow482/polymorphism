@@ -12,9 +12,9 @@ public:
     float Square() const override;
 
 private:
-  Point m_p1;
-  Point m_p2;
-  Point m_p3;
+  Point m_a;
+  Point m_b;
+  Point m_c;
 };
 
 
