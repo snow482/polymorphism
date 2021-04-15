@@ -1,12 +1,15 @@
 #include <iostream>
-#include <iomanip>
-#include <algorithm>
 #include <vector>
 #include <string>
 #include <cmath>
 #include <fstream>
+#include "inc/Figure.hpp"
+#include "inc/Triangle.hpp"
+#include "inc/Rectangle.hpp"
+#include "inc/Circle.hpp"
+#include "inc/Ellipse.hpp"
 
-
+/*
 struct Point {
     int x, y = 0;
 };
@@ -20,7 +23,7 @@ struct Point {
 ///    SumS += S
 /// вывод SumP,SumS
 
-/*!
+*//*!
  * Прочитать фигуру
  *     прочитать тип фигуры - t
  *     if (t == triangle)
@@ -30,7 +33,7 @@ struct Point {
  *     if  (t == rectangle)
  *         ... (как в triangle)
  *
- */
+ *//*
 
 float gipotenuza(Point a, Point b) {
     return sqrt(pow(a.x-b.x, 2) + pow(a.y-b.y, 2));
@@ -150,11 +153,12 @@ private:
     Point m_a;
     Point m_b;
     Point m_c;
-};
+};*/
 
 /// Колличество фигур
-///     открыть файл
+/// открыть файл
 std::vector<Figure*> fileReading(const std::string& filePath) {
+    /// Путь к файлу
     std::ifstream input {filePath};
     /*if(!input.good()) {
         return {};
@@ -162,13 +166,13 @@ std::vector<Figure*> fileReading(const std::string& filePath) {
     std::vector<Figure*> figure;
 
     while (!input.eof()) {
-        ///        прочитать файл
+        /// прочитать файл
         if(input.bad()) {
             std::cout << "Error" << std::endl;
         }
         else {
             int n;
-            input >> n /*>> std::ws*/;
+            input >> n;
             switch (n)
             {
                 case 1:
@@ -201,6 +205,7 @@ std::vector<Figure*> fileReading(const std::string& filePath) {
                     Point e[3];
                     input >> e[0].x >> e[0].y >> e[1].x >> e[1].y >> e[2].x >> e[2].y;
                     auto ptr = new Ellipse(e[0], e[1], e[2]);
+                    figure.push_back(ptr);
                 }
                 break;
                 default:
@@ -212,42 +217,18 @@ std::vector<Figure*> fileReading(const std::string& filePath) {
 }
 
 std::vector<float> sumOfAll ( std::vector<Figure*>& figures) {
-    float Psum = 0;
-    float Ssum = 0;
+    float P_sum = 0;
+    float S_sum = 0;
     std::vector<float> sum;
     for (auto& it : figures) {
-        Psum += it->Perimeter();
-        Ssum += it->Square();
+        P_sum += it->Perimeter();
+        S_sum += it->Square();
     }
-    sum.push_back(Psum);
-    sum.push_back(Ssum);
+    sum.push_back(P_sum);
+    sum.push_back(S_sum);
 
     return sum;
 }
-/*!
- * Figure
- *     P
- *     S
- *     print() // debug
- *
- * triangle : Figure
- *     Constructor triangle (a,b,c)
- *     P() { }
- *     S() { }
- *     print()
- *
- * private:
- * a,b,c
- */
-
-
-
-/*!
- * точка {x, y}
- * для треугольника - 3 точки
- * для прямоугольника (квадрата) - 4 точки
- * круг - 1 точка и радиус
- */
 
 int main() {
 
@@ -262,10 +243,6 @@ int main() {
 
     std::cout << "Perimeter sum: " << Psum << std::endl;
     std::cout << "Square sum: " << Ssum << std::endl;
-
-
-    /// 3 раза вызвать функцию coordinatesSubstraction
-
 
 
     return 0;

@@ -1,11 +1,9 @@
 #pragma once
 #include "Figure.hpp"
 
-
-
 class Triangle : public Figure {
 public:
-    Triangle(Point p1, Point p2, Point p3);
+    Triangle(Point a, Point b, Point c);
     ~Triangle() = default;
 
     float Perimeter() const override;
@@ -18,7 +16,7 @@ private:
 };
 
 
-/* Периметр
+/*! Периметр
  * 1) надо найти стороны по гипотенуза^2 = катет^2 + катет^2
  * 2) P = a+b+c
  *

@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable( polymorphism
         inc/Figure.hpp
-        src/Figure.cpp
+        #src/Figure.cpp
         inc/Triangle.hpp
         src/Triangle.cpp
         inc/Rectangle.hpp
