@@ -1,5 +1,6 @@
 #pragma once
 #include "Figure.hpp"
+#include "Formulae.hpp"
 
 class Triangle : public Figure {
 public:

@@ -2,8 +2,8 @@
 
 
 Triangle::Triangle(Point a, Point b, Point c)
-: m_a(a), m_b(b), m_c(c)
-{}
+    : m_a(a), m_b(b), m_c(c)
+    {}
 
 float Triangle::Perimeter() const {
     float ab = gipotenuza(m_a, m_b);
