@@ -1,8 +1,8 @@
 #pragma once
 
 struct Point {
-    float x, y;
+    float x = 0;
+    float y = 0;
 };
 
-/// Теорема Пифагора
-float gipotenuza(Point a, Point b);
+float hypotenuse(Point a, Point b);

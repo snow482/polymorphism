@@ -1,37 +1,25 @@
 #pragma once
-#include <iostream>
-#include <iomanip>
-#include <algorithm>
+#include <cstdint>
+#include <memory>
 #include <vector>
-#include <string>
-#include <cmath>
+#include "Formulae.hpp"
 
-
+enum class FigureType : uint8_t {
+    Unknown = 0,
+    Triangle = 1,
+    Rectangle = 2,
+    Circle = 3,
+    Ellipse = 4
+};
+FigureType FigureTypeCast(int t);
 
 // Figure - базовый класс, другие фигуры будут наследоваться от него
-// есть S - площадь, P - периметр
-// main() - взаимодействует с файлом input.txt, берет оттуда значения {x,y} для построения по координатам
-// нужновывести сумму всех площадей и периметров всех фигур
-
-/*struct Point {
-    float x, y;
-};*/
-
-/// Теорема Пифагора
-/*inline float gipotenuza(Point a, Point b) {
-    return sqrt(pow(a.x-b.x, 2) + pow(a.y-b.y, 2));
-}*/
-
 class Figure {
 public:
-
     virtual ~Figure() = default;
-    virtual float Perimeter() const = 0;
-    virtual float Square() const = 0;
+    [[nodiscard]] virtual float Perimeter() const = 0;
+    [[nodiscard]] virtual float Square() const = 0;
 
+    //Factory method pattern (mutant version)
+    static std::vector<std::shared_ptr<Figure>> fileExtractor(const std::string& filePath);
 };
-
-
-
-
-
