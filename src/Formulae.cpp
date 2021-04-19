@@ -1,7 +1,7 @@
-#include "../inc/Formulae.hpp"
 #include <cmath>
+#include "Formulae.hpp"
 
-float gipotenuza(Point a, Point b) {
-    return sqrt(pow(a.x-b.x, 2) + pow(a.y-b.y, 2));
+float hypotenuse(Point a, Point b) {
+    return sqrtf(powf(a.x-b.x, 2) + powf(a.y-b.y, 2));
 }
 

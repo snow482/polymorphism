@@ -3,19 +3,26 @@ project(polymorphism)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable( polymorphism
-        inc/Figure.hpp
-        inc/Formulae.hpp
-        src/Formulae.cpp
-        #src/Figure.cpp
-        inc/Triangle.hpp
-        src/Triangle.cpp
-        inc/Rectangle.hpp
-        src/Rectangle.cpp
-        inc/Circle.hpp
-        src/Circle.cpp
-        inc/Ellipse.hpp
-        src/Ellipse.cpp
-        main.cpp
-        )
+set(TARGET_NAME figures)
+set(SOURCES
+    src/Formulae.cpp
+    src/Figure.cpp
+    src/Triangle.cpp
+    src/Rectangle.cpp
+    src/Circle.cpp
+    src/Ellipse.cpp
+    main.cpp)
 
+set(INCLUDE
+    inc/Formulae.hpp
+    inc/Figure.hpp
+    inc/Triangle.hpp
+    inc/Rectangle.hpp
+    inc/Circle.hpp
+    inc/Ellipse.hpp)
+
+add_executable( ${TARGET_NAME}
+    ${INCLUDE}
+    ${SOURCES})
+
+target_include_directories(${TARGET_NAME} PUBLIC "inc")

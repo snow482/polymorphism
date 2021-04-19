@@ -1,24 +1,21 @@
-#include "../inc/Rectangle.hpp"
+#include <cassert>
+#include "Rectangle.hpp"
 
-Rectangle::Rectangle(Point a, Point b, Point c, Point d)
-    : m_a(a), m_b(b), m_c(c), m_d(d)
-    {}
+Rectangle::Rectangle(Point a, Point b, Point c, Point d) {
+    auto ab = hypotenuse(a,b);
+    auto cd = hypotenuse(c,d);
+    assert(ab == cd);
+    m_a = ab;
+
+    auto ac = hypotenuse(a,c);
+    auto bd = hypotenuse(b,d);
+    assert(ac == bd);
+    m_b = ac;
+}
 
 float Rectangle::Perimeter() const {
-    float ab = gipotenuza(m_a, m_b);
-    float bc = gipotenuza(m_b, m_c);
-    float cd = gipotenuza(m_c, m_d);
-    float ad = gipotenuza(m_a, m_d);
-    if(ab == bc == cd == ad) {
-        return 4*ab;
-    }
-    else {
-        return 2*ab + 2*bc;
-    }
+    return 2 * (m_a + m_b);
 };
 float Rectangle::Square() const {
-    float ab = gipotenuza(m_a, m_b);
-    float bc = gipotenuza(m_b, m_c);
-
-    return ab * bc;
+    return m_a * m_b;
 }

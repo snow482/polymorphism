@@ -1,6 +1,5 @@
 #pragma once
 #include "Figure.hpp"
-#include "Formulae.hpp"
 
 class Rectangle : public Figure {
 public:
@@ -11,16 +10,6 @@ public:
     float Square() const override;
 
 private:
-    Point m_a;
-    Point m_b;
-    Point m_c;
-    Point m_d;
+    float m_a;
+    float m_b;
 };
-
-
-/*! Периметр
- * 1) P = 2a+2b, где a,b - стороны
- *
- * Площадь
- * 1) S = ab
- */
