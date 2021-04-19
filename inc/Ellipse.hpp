@@ -6,7 +6,7 @@
 class Ellipse : public Figure {
 public:
     Ellipse(Point a, Point b, Point c);
-    ~Ellipse() = default;
+    ~Ellipse() override = default;
 
     float Perimeter() const override;
     float Square() const override;

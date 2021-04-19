@@ -4,7 +4,7 @@
 class Triangle : public Figure {
 public:
     Triangle(Point a, Point b, Point c);
-    ~Triangle() = default;
+    ~Triangle() override = default;
 
     float Perimeter() const override;
     float Square() const override;

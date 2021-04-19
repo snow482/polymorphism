@@ -1,4 +1,5 @@
 #include <iostream>
+#include <functional>
 #include "Figure.hpp"
 
 using Extractor = std::function<float(const std::shared_ptr<Figure>&)>;

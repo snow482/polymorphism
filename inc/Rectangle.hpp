@@ -4,7 +4,7 @@
 class Rectangle : public Figure {
 public:
     Rectangle(Point a, Point b, Point c, Point d);
-    ~Rectangle() = default;
+    ~Rectangle() override = default;
 
     float Perimeter() const override;
     float Square() const override;
