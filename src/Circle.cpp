@@ -1,5 +1,4 @@
 #include "Circle.hpp"
-#include <cmath>
 
 Circle::Circle(Point a, Point b)
     : m_point(a), m_radius(b)

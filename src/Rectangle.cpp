@@ -14,7 +14,7 @@ Rectangle::Rectangle(Point a, Point b, Point c, Point d) {
 }
 
 float Rectangle::Perimeter() const {
-    return 2 * (m_a + m_b);
+    return 2.0f * (m_a + m_b);
 };
 float Rectangle::Square() const {
     return m_a * m_b;

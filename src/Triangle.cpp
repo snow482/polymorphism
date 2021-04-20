@@ -16,7 +16,7 @@ float Triangle::Perimeter() const {
 
 float Triangle::Square() const {
     //half perimeter = 1/2 (a+b+c)
-    float halfPerimeter = Perimeter() / 2;
+    float halfPerimeter = Perimeter() / 2.0f;
 
     //S(triangle) = square_root p(p-a)(p-b)(p-c)
     return sqrt(

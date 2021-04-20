@@ -1,5 +1,7 @@
 #pragma once
+#define _USE_MATH_DEFINES
 #include <cstdint>
+#include <math.h>
 #include <memory>
 #include <vector>
 #include "Formulae.hpp"

@@ -1,8 +1,6 @@
 #pragma once
 #include "Figure.hpp"
-#include "Formulae.hpp"
 
-//TODO refacrot this class same as other figures
 class Ellipse : public Figure {
 public:
     Ellipse(Point a, Point b, Point c);
